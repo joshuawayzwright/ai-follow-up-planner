@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>AI Follow-Up Planner</title>
+<meta name="description" content="Plan polite follow-ups for enquiries, quotes and past clients, with ready-to-send messages and a calendar file. Free and runs in your browser.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the form</a>
+<header class="site"><div class="wrap">
+  <h1>AI <span>Follow-Up</span> Planner</h1>
+  <p>Never forget to follow up again. Get dates, messages and a calendar file. Everything stays in your browser.</p>
+</div></header>
+
+<main id="main" class="wrap">
+  <div class="grid">
+    <form class="card" id="form" novalidate>
+      <h2>Who are you following up?</h2>
+      <label for="type">Situation</label>
+      <select id="type">
+        <option value="enquiry">New enquiry (no quote yet)</option>
+        <option value="quote" selected>Quote sent</option>
+        <option value="past">Past client (job finished)</option>
+      </select>
+      <div class="row two">
+        <div><label for="name">Their first name</label><input id="name" autocomplete="off"></div>
+        <div><label for="service">Service</label><input id="service" placeholder="e.g. end-of-lease clean"></div>
+      </div>
+      <label for="startDate">Start date <span class="hint">When they enquired, you sent the quote, or the job finished</span></label>
+      <input id="startDate" type="date">
+      <label class="check"><input type="checkbox" id="skipWeekends" checked> Move weekend follow-ups to Monday</label>
+
+      <h2 class="spaced">About you</h2>
+      <div class="row two">
+        <div><label for="sender">Your name</label><input id="sender" autocomplete="given-name"></div>
+        <div><label for="business">Business name</label><input id="business" autocomplete="organization"></div>
+      </div>
+      <label for="reviewLink">Review link <span class="hint">Optional: your Google review link</span></label>
+      <input id="reviewLink" type="url" placeholder="https://g.page/r/…">
+    </form>
+
+    <section class="card" aria-labelledby="out-title">
+      <h2 id="out-title">Your plan</h2>
+      <p class="error" id="errors" role="alert"></p>
+      <div id="steps" aria-live="polite"></div>
+      <div class="buttons no-print">
+        <button class="primary" type="button" id="ics">Add to calendar (.ics)</button>
+        <button type="button" id="copy">Copy plan</button>
+        <button type="button" id="copy-ai">Copy AI rewrite prompt</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+      <p class="hint no-print">Only follow up with people who contacted you, and stop when they say no. Marketing messages need consent and a way to opt out under the Spam Act 2003. This app doesn't send messages or call any AI.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap">
+  Free tool by <a href="https://thesoloserviceprovider.com.au/">The Solo Service Provider</a>
+  · <a href="https://github.com/joshuawayzwright/ai-follow-up-planner">Source</a>
+</div></footer>
+<script src="lib.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
