@@ -129,3 +129,7 @@ footer.site { padding: 24px 16px 40px; color: var(--muted); font-size: .9rem; bo
 .step h3 { margin: 0 0 4px; font-size: 1rem; }
 .step .meta { color: var(--muted); font-size: .9rem; margin: 0 0 6px; }
 .step pre { margin: 0; }
+
+.cta { margin-top: 18px; padding: 14px 16px; border: 1px solid var(--gold-bright); border-radius: var(--radius); background: var(--bg); }
+.cta p { margin: 0 0 8px; }
+.cta-link { display: inline-block; font-weight: 700; padding: 10px 0; }
